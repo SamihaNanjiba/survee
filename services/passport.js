@@ -23,6 +23,7 @@ passport.use(
             callbackURL: keys.redirectURI + '/auth/google/callback'
         }, 
         (accessToken, refreshToken, profile, done) => {
+            console.log('profile: ', profile);
             
             User.findOne({ googleID: profile.id })
                 .then((existingUser) => {
