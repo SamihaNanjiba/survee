@@ -27,9 +27,9 @@ passport.use(
             
             User.findOne({ googleID: profile.id })
                 .then((existingUser) => {
+                    console.log('Existing user', existingUser);
                     if(existingUser) {
                         // We already have a record of the given profile ID
-                        console.log('User', existingUser);
                         done(null, existingUser);
                     }else{
                         console.log('here');
