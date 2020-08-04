@@ -32,6 +32,7 @@ passport.use(
                         console.log('User', existingUser);
                         done(null, existingUser);
                     }else{
+                        console.log('here');
                         // We need to make a new record with the given profile ID
                         new User ({googleID: profile.id})
                         .save()
